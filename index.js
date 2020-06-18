@@ -39,7 +39,7 @@ function handleEvent(event) {
   // create a echoing text message
   const echo = { type: 'text', text: event.message.text };
 
-  return client.pushMessage(event.userId, {type: 'text', text: 'push to user directly'}).then(client.replyMessage(event.replyToken, echo));
+  return client.pushMessage(event.source.userId, {type: 'text', text: 'push to user directly'}).then(client.replyMessage(event.replyToken, echo));
 
   // // use reply API
   // return client.replyMessage(event.replyToken, echo);
